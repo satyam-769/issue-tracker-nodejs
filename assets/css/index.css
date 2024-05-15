@@ -1,0 +1,46 @@
+.nav-header {
+  background: #b0e0e6;
+  box-shadow: 0 0 0 2px #34e8ff;
+}
+
+.mt-25 {
+  margin-top: 25px !important;
+}
+.nav {
+  font-size: 28px;
+  font-weight: 400;
+}
+.form-check-label {
+  padding-left: 2px;
+  margin-top: 4px !important;
+}
+.modal-content {
+  border-radius: 4px !important;
+}
+.footer {
+  height: 60px;
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+.policy {
+  display: flex;
+  justify-content: space-between;
+}
+.p-card {
+  min-height: 84vh;
+  max-height: 84vh;
+  overflow-y: auto;
+}
+
+.modal-dialog-scrollable .modal-content {
+  max-height: 78%;
+}
+.modal-content {
+  top: 10vh;
+}
+.m-content {
+  max-height: 370px;
+  overflow-y: auto;
+}

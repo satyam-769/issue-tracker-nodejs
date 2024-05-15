@@ -1,0 +1,10 @@
+<!-- shows create project button on project page and create issue buton if the project is open -->
+<nav class="navbar nav-header navbar-expand-sm w-100">
+  <div class="container-fluid">
+    <h3>
+      <a class="nav navbar-brand ms-5" href="/"> Issue Tracker </a>
+    </h3>
+    <% if( title === "Issue Tracker | Project Page"){ %> <%- include('_issue_form'); %> <%
+    }else{ %> <%- include('_project_form'); %> <% } %>
+  </div>
+</nav>
