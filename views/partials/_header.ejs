@@ -4,6 +4,11 @@
     <h3>
       <a class="nav navbar-brand ms-5" href="/"> Issue Tracker </a>
     </h3>
+    <h4 class="nav-item">
+      <a class="navbar-brand ms-5" href="/"> Home </a>
+      <a class="navbar-brand ms-3" href="/about-us"> About Us </a>
+      <a class="navbar-brand ms-3" href="/contact-us"> Contact Us </a>
+    </h4>
     <% if( title === "Issue Tracker | Project Page"){ %> <%- include('_issue_form'); %> <%
     }else{ %> <%- include('_project_form'); %> <% } %>
   </div>
