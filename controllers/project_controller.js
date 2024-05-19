@@ -38,6 +38,7 @@ const project = async function (req, res) {
 // create issue
 const createIssue = async function (req, res) {
   try {
+    // Find the project id of the issue to be create
     let project = await Project.findById(req.params.id);
     if (project) {
       let issue = await Issue.create({
@@ -71,8 +72,42 @@ const createIssue = async function (req, res) {
   }
 };
 
+// delete issue
+const deleteIssue = async function (req, res) {
+  try {
+    // Find the project id of the issue to be deleted
+    let project = await Project.findById(req?.params?.projectId);
+    if (project) {
+      // Find the index of the issue to be deleted
+      let issueIndex = project.issues.findIndex(issue => issue.equals(req.params.issueId));
+      if (issueIndex !== -1) {
+        // Remove the issue from the project's issues array
+        project.issues.splice(issueIndex, 1);
+
+        // Delete the issue from the Issue collection
+        await Issue.findByIdAndDelete(req.params.issueId);
+
+        // Save the updated project
+        await project.save();
+
+        return res.redirect('back');
+      } else {
+        // Issue not found in the project's issues array
+        return res.status(404).send('Issue not found');
+      }
+    } else {
+      // Project not found
+      return res.status(404).send('Project not found');
+    }
+  } catch (err) {
+    console.error('Error deleting issue:', err);
+    return res.status(500).send('Internal Server Error');
+  }
+};
+
 export {
   create,
   project,
   createIssue,
+  deleteIssue,
 }

@@ -50,6 +50,10 @@
                   </h6>
                   Labels : <%= issue.labels %>
                 </div>
+                <a class="btn btn-danger delete-issue" 
+                  href="/project/p_id/<%= project._id %>/issue_id/<%= issue.id %>">
+                  Delete Issue
+                </a>
               </div>
               <% } %>
             </div>
