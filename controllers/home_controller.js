@@ -7,9 +7,9 @@ const homeController = async function (req, res) {
       title: 'Issue Tracker | Home',
       projects,
     });
-  } catch {
+  } catch (err) {
     console.log('Error', err);
-    return;
+    return res.status(500).send('Internal Server Error');
   }
 };
 
